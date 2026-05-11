@@ -1,0 +1,146 @@
+/* Declaring color's variable */
+:root {
+    --primary:#0553B1;
+    --accent: #C4720A;
+    --blackText: #2C2C2C;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+/* Removes Browser's spacing , border box overflow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting Screen Width and Fonts */
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--white);
+  color: var(--blackText);
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+/* NAV */
+
+.navbar {
+  background: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none; 
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.hamburgerNav {
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  font-size: 20px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  display: block;
+}
+
+.slogan-box {
+  position: absolute;
+  top: 35px;
+  left: 16px;
+  background: rgba(255,255,255,0.85);
+  padding: 20px 12px;
+  border-left: 7px solid var(--black);
+}
+
+.slogan-box p {
+    font-weight: 800s;
+    font-size: 18px;
+    color: var(--black)
+}
+
+/* CTA BUTTONS */
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: var(--white);
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.cta-btn {
+  flex: 1;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  padding: 28px 20px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Badges */
+.trust-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.badge {
+  background: var(--primary);
+  color: var(--white);
+  padding: 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  margin-top: 35px;
+}
+
+.paw-icon {
+  position: absolute;
+  top: -55px;
+  left: -55px;
+  width: 120px;
+  height: 120px;
+}
+
+.badge-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.badge h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.badge p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
