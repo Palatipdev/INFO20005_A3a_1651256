@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Page</title>
+    <title>Class Detail</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 <body>
 
     <!-- NAV -->
     <header>
         <nav class = "navbar">
-            <a href="index.html">Homepage</a>
+            <a href="class.html">Classes</a>
             <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
             <a href= "cart.html" class = "cart-link">
                 <span class = "material-icons">shopping_cart</span>
@@ -22,18 +21,27 @@
         </nav>
     </header>
 
-    <!-- Puppy Training -->
-    <section class = "puppy-training">
-        <div class="section-header">Puppy Training Classes</div>
-        <div class="classArea" id="puppy-cards"></div>
-    </section>
+    <!-- Class Image -->
+    <img id="class-image" src="" alt="" class="detail-img">
 
-     <!-- Dog Training -->
-    <section class="dog-training">
-        <div class = "section-header">Dog Training Classes</div>
-        <div class="classArea" id="dog-cards"></div>
-    </section>
+    <!-- Class Info -->
+    <p id="class-level"></p>
+    <h2 id="class-name"></h2>
+    <p id="class-location"></p>
+
+    <!-- Date Pills -->
+    <div id="date-pills"></div>
+
+    <!-- Whats Included -->
+    <div id="included-list"></div>
+
+    <!-- Price -->
+    <p id="class-price"></p>
+
+    <button onclick="addToCart()">BOOK NOW</button>
+
 
     <script src="js/classes.js"></script>
+    <script src="js/class-details.js"></script>
 </body>
-</html> 
+</html>

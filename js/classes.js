@@ -7,7 +7,15 @@ const classes = [
     classSize: 'Group or 1:1',
     classLevel: 'Foundation Class',
     price: 275,
-    image: 'images/basic-manners.png'
+    image: 'images/basic-manners.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Suitable for puppies 12 weeks or older'
+    ]
   },
   {
     id: 2,
@@ -17,7 +25,15 @@ const classes = [
     classSize: 'Group',
     classLevel: 'Graduate Class',
     price: 300,
-    image: 'images/level1obedience.png'
+    image: 'images/level1obedience.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=1">Basic Manners</a> course required'
+    ]
   },
   {
     id: 3,
@@ -27,7 +43,15 @@ const classes = [
     classSize: 'Group',
     classLevel: 'Graduate Class',
     price: 335,
-    image: 'images/level2obedience.png'
+    image: 'images/level2obedience.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=2">Level 1 Obedience</a> course required'
+    ]
   },
   {
     id: 4,
@@ -37,7 +61,15 @@ const classes = [
     classSize: 'Group or 1:1',
     classLevel: 'Foundation Class',
     price: 330,
-    image: 'images/k9allsports.png'
+    image: 'images/k9allsports.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=1">Basic Manners</a> course required'
+    ]
   },
   {
     id: 5,
@@ -47,7 +79,15 @@ const classes = [
     classSize: 'Group',
     classLevel: 'Graduate Class',
     price: 345,
-    image: 'images/level1agility.png'
+    image: 'images/level1agility.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=4">K9 Allsports</a> course required'
+    ]
   },
   {
     id: 6,
@@ -57,7 +97,15 @@ const classes = [
     classSize: 'Group',
     classLevel: 'Graduate Class',
     price: 360,
-    image: 'images/level2agility.png'
+    image: 'images/level2agility.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=5">Level 1 Agility</a> course required'
+    ]
   },
   {
     id: 7,
@@ -67,7 +115,15 @@ const classes = [
     classSize: 'Group',
     classLevel: 'Graduate Class',
     price: 399,
-    image: 'images/level3agility.png'
+    image: 'images/level3agility.png',
+    dates: ['Sat 4 Apr', 'Sun 5 Apr', 'Sat 11 Apr', 'Sun 12 Apr', 'Sat 18 Apr'],
+    included: [
+      '5 weekly group sessions',
+      'Qualified certified trainers',
+      'Whole family are welcomed',
+      'One make-up class available',
+      'Prerequisite: <a href="class-detail.html?id=6">Level 2 Agility</a> course required'
+    ]
   }
 ];
 
@@ -100,3 +156,7 @@ function renderClasses(type, containerID){
 
 renderClasses("puppy", "puppy-cards");
 renderClasses("dog","dog-cards");
+
+function viewProgram(id) {
+  window.location.href = `class-detail.html?id=${id}`;
+}
