@@ -276,10 +276,11 @@ body {
 /* CLASS DETAILS */
 
 .detail-img{
-  width: 100%;
+  width: 50%;
   max-height: 250px;
   object-fit: cover;
   display: block;
+  margin: 10px auto;
 }
 
 
@@ -436,4 +437,140 @@ body {
   display: none;
   text-align: center;
   line-height: 18px;
+}
+
+.class-summary-header{
+  font-weight: 700;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--black);
+  border-bottom-style: solid;
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+/* cart items */
+.cart-item{
+  margin: 10px auto;
+  display: flex;
+  gap: 35px;
+  margin-left: 30px
+}
+
+.cart-details{
+  gap: 40px;
+}
+
+.cart-image {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.cart-details h3 {
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.cart-details p {
+    margin: 4px 0;
+}
+
+.remove-btn {
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* dog detail box */
+.dog-details-card {
+    background: var(--gray);
+    padding: 20px;
+    margin: 20px 10px;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    border-radius: 8px;
+}
+
+.dog-details-card h3 {
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.dog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.dog-form label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dog-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.add-dog-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.order-summary {
+    margin: 30px 10px 0 10px;
+    padding: 15px;
+    border-top: 2px solid var(--black);  
+}
+
+.order-summary h3 {
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between; 
+    margin: 8px 0;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent);
+    margin-top: 15px;
+    padding-top: 15px;
+    /* Separate total from items */
+    border-top: 1px solid #ccc;  
+}
+
+.checkout-btn {
+    width: 80%;
+    margin: 5px auto;
+    display: block;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;  /* Slight rounding */
+    text-transform: uppercase;
 }

@@ -6,7 +6,7 @@ const selectedClass = classes.find(c => c.id === classID)
 
 
 function selectDate(element){
-    document.querySelector(".datepill").forEach(pill => {
+    document.querySelectorAll(".date-pill").forEach(pill => {
         pill.classList.remove('selected');
     });
     element.classList.add('selected')
@@ -47,7 +47,11 @@ function addToCart(){
 
     // check if datepill with class selected exist
     const selectedDate = document.querySelector('.date-pill.selected')
-    const date = selectedDate ? selectedDate.textContent.trim() : 'no date selected'
+    if (!selectedDate){
+        alert('Please select a date first')
+        return;
+    }
+    const date = selectedDate.textContent.trim();
 
     // local cartItem of current selected class
     const cartItem = {
@@ -57,7 +61,8 @@ function addToCart(){
         location: selectedClass.location,
         classLevel: selectedClass.location,
         price : selectedClass.price,
-        date: date
+        date: date,
+        image: selectedClass.image
     }
 
     // check and get existing cart
@@ -74,8 +79,31 @@ function addToCart(){
 
     // replace "book now" with confirmation (new design decision)
     const button = document.getElementById('book-button');
+    const originalText = button.textContent
+    const originalBackground = button.style.background
+
     button.textContent = '✓ Added to Cart';
     button.style.background = '#28b148';
     button.disabled = true;
+
+    // After 2 seconds reset back to add to cart
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = originalColor;
+        button.disabled = false;
+    }, 2000);
+}
+
+function updateCartBadge() {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    const badge = document.getElementById('cart-badge');
+    if (cart.length > 0){
+        badge.textContent = cart.length
+        badge.style.display = 'block';
+        
+    } else {
+        badge.style.display = 'none';
+    }
 }
 

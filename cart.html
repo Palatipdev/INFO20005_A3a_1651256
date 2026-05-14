@@ -5,9 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+        
+    <!-- NAV -->
+    <header>
+        <nav class = "navbar">
+            <a href="class.html">Classes</a>
+            <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
+            <div class="cart-link">
+                <span class = "material-icons">shopping_cart</span>
+                <span id = "cart-badge" class="cart-badge"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header -->
+    <section class = "class-summary-header">
+        <p>Class Summary:</p>
+    </section>
+
+
+    <!-- Cart Section -->
+    <div id = "cart-items"></div>
+
+    <!-- Dog Details Placeholder -->
+    <section class="dog-details-card">
+        <h3>Enter Dog Details:</h3>
+        <div class="dog-form">
+            <label>Name: <input type="text" value="Jack" class="dog-input"></label>
+            <label>Age: <input type="text" value="12 Months" class="dog-input"></label>
+            <label>Traits: <input type="text" value="Playful and Optimistic" class="dog-input"></label>
+        </div>
+        <button class="add-dog-btn">+</button>
+    </section>
+
+    <!-- Order Summary -->
+    <section class="order-summary">
+        <h3>Order Summary:</h3>
+        <div id="order-items"></div>
+        <p class="total">
+            <span>Total:</span> <span id="total-price">$0</span>
+        </p>
+    </section>
+
+    <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+
+    <script src="js/class-details.js"></script>
+    <script src="js/cart.js"></script>
+
     
+     
+
 </body>
 </html>
