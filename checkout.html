@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
+    <title>Checkout Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-        
-    <!-- NAV -->
+        <!-- NAV -->
     <header>
         <nav class = "navbar">
             <a href="class.html">Classes</a>
             <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
-            <div class="cart-link">
+            <a href= "cart.html" class = "cart-link">
                 <span class = "material-icons">shopping_cart</span>
                 <span id = "cart-badge" class="cart-badge"></span>
-            </div>
+            </a>
         </nav>
+
     </header>
 
-    <!-- Header -->
-    <section class = "class-summary-header">
-        <p>Class Summary:</p>
+    <p class="checkout-text">Checkout:</p>
+  
+    <!-- Card Checkout -->
+    <section class="card-form">
+        <label>Cardholder Name: <input type="text" value="Palatip Boonmeerit" class="card-input"></label>
+        <label>Card Number: <input type="text" value="**** **** **** 1289" class="card-input"></label>
+        <div class="card-form-flex">
+            <label>Expiry: <input type="text" value="09/28" class="card-input"></label>
+            <label>CVV/CVC: <input type="text" value="123" class="card-input"></label>
+        </div>
     </section>
-
-
-    <!-- Cart Section -->
-    <div id = "cart-items"></div>
 
     <!-- Dog Details Placeholder -->
     <section class="dog-details-card">
-        <h3>Enter Dog Details:</h3>
+        <h3>Dog Details Confirmation:</h3>
         <div class="dog-form">
             <label>Name: <input type="text" value="Jack" class="dog-input"></label>
             <label>Age: <input type="text" value="12 Months" class="dog-input"></label>
             <label>Traits: <input type="text" value="Playful and Optimistic" class="dog-input"></label>
         </div>
-        <button class="add-dog-btn">+</button>
     </section>
 
     <!-- Order Summary -->
@@ -51,14 +53,16 @@
         </p>
     </section>
 
-    <button class="checkout-btn" onclick="location.href='checkout.html'">PROCEED TO CHECKOUT</button>
-    
+
+
+    <button class="checkout-btn" onclick="confirmBooking()">CONFIRM BOOKING</button>
+
+
+
+
     <script src="js/classes.js"></script>
     <script src="js/shared.js"></script>
-    <script src="js/cart.js"></script>
-
-    
-     
+    <script src="js/checkout.js"></script>
 
 </body>
 </html>

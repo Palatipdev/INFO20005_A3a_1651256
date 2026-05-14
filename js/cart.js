@@ -1,20 +1,18 @@
 
-updateCartBadge()
+
 
 // Dev function
-function clearCart(){
-    localStorage.clear() 
-    updateCartBadge()
-}
 
 // update the cart number on load
 
 function printCart(){
 
     const cart = JSON.parse(localStorage.getItem("cart")) || []
-
     const cartContainer = document.getElementById("cart-items");
-    cart.forEach(item => {
+
+    cartContainer.innerHTML = '';
+
+    cart.forEach((item, index) => {
         cartContainer.innerHTML += `
         <div class = "cart-item">
             <img src = "${item.image}" class = "cart-image">
@@ -22,40 +20,22 @@ function printCart(){
                 <h3>${item.name}</h3>
                 <p>Date: ${item.date}</p>
                 <p>Price: $${item.price} </p>
-                <p class="remove-btn" onclick="removeItem(${item.id}, '${item.date}')"> remove X </p>
+                <p class="remove-btn" onclick="removeItem(${index})"> remove X </p>
             </div>
         </div>
         `
     })
 }
 
-function removeItem(classId, date){
+function removeItem(index){
     let cart = JSON.parse(localStorage.getItem('cart')) || []
-
-    // filter the matching item
-    cart = cart.filter(item => !(item.id === classId && item.date === date))
-
+    
+    // Remove exactly one item at the specified index
+    cart.splice(index, 1)
+    
     localStorage.setItem('cart', JSON.stringify(cart))
-
-    // reload the page
     location.reload()
 }
 
-function calculateTotal(){
-    const cart = JSON.parse(localStorage.getItem('cart')) || []
-
-    // Build order summary items
-    const orderItems = document.getElementById("order-items")
-    let total = 0
-
-    cart.forEach(item => {
-        orderItems.innerHTML += `<p>${item.name}: $${item.price}</p>`
-        total += parseFloat(item.price)
-    })
-
-    document.getElementById('total-price').textContent = `$${total.toFixed(2)}`
-
-}
-
-calculateTotal();
 printCart();
+displayOrderSummary();

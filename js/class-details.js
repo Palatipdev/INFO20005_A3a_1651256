@@ -89,21 +89,9 @@ function addToCart(){
     // After 2 seconds reset back to add to cart
     setTimeout(() => {
         button.textContent = originalText;
-        button.style.background = originalColor;
+        button.style.background = originalBackground;
         button.disabled = false;
-    }, 2000);
+    }, 750);
 }
 
-function updateCartBadge() {
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
-    const badge = document.getElementById('cart-badge');
-    if (cart.length > 0){
-        badge.textContent = cart.length
-        badge.style.display = 'block';
-        
-    } else {
-        badge.style.display = 'none';
-    }
-}
 
