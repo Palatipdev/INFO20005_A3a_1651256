@@ -24,7 +24,12 @@ body {
   color: var(--blackText);
   max-width: 390px;
   margin: 0 auto;
+
+  
 }
+
+
+
 
 .paddedContainer{
   padding: 0 15px;
@@ -578,10 +583,11 @@ body {
     cursor: pointer;
     border-radius: 4px;  /* Slight rounding */
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 
-/* Confirmation Page */
+/* CHECKOUT PAGE */
 
 .checkout-text {
     font-weight: 700;
@@ -622,3 +628,89 @@ body {
 .card-form-flex label {
     flex: 1;
 }
+
+/* CONFIRMATION PAGE */
+
+.confirm-navbar{
+  display: flex;
+  justify-content: center;  /* Centers the logo */
+  align-items: center;
+  background-color: var(--primary);
+  padding: 10px 16px;
+}
+.paw-decoration {
+    width: 60px;
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    opacity: 0.6;
+}
+
+.confirmation-card {
+    background: var(--gray);
+    padding: 30px 20px;
+    margin: 40px 0 -10px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.confirmation-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.tick-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.confirmation-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.confirmation-message {
+    font-size: 16px;
+    margin: 15px 0 25px 0;
+}
+
+.dogs-divider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 25px 0;
+    padding: 15px 0;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+}
+
+.dogs-divider img {
+    width: 50px;
+    height: auto;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.dog-peeking {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+}
+
+.confirmation-footer {
+    text-align: center;
+    margin-top: -5px;
+}
+
+
+

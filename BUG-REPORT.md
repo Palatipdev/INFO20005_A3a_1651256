@@ -36,4 +36,35 @@ function removeItem(index){
 }
 
 ```
+
+### Bug 2: Redirecting to Confirmation Page in JS
+
+## 
+Initially implemented client-side validation with JavaScript redirect, but encountered browser compatibility issues with location.href. 
  
+
+ ``` javascript
+ function confirmBooking(){
+
+    // check fields not empty
+    const cardName = document.querySelector('.card-form input:nth-child(1)').value.trim();
+    const cardNumber = document.querySelector('.card-form input:nth-child(2)').value.trim();
+
+    if (!cardName || !cardNumber){
+       alert("Please fill in the detail payment");
+        return;
+    }
+
+    window.location.href = './confirmation.html'
+}
+
+```
+
+## Solution
+Switched to semantic <a> tag for reliability and better accessibility.
+
+``` javascript
+
+    <a href="confirmation.html" class="checkout-btn">CONFIRM BOOKING</a>
+
+```

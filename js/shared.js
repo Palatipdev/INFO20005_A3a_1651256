@@ -11,10 +11,6 @@ function updateCartBadge() {
     }
 }
 
-function clearCart(){
-    localStorage.clear() 
-    updateCartBadge()
-}
 
 function displayOrderSummary(){
     const cart = JSON.parse(localStorage.getItem('cart')) || []
