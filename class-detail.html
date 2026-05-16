@@ -1,66 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class Detail</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Information Bar -->
+    <div class="info-bar">
+      <img src="images/logo.png" alt="Planet K9 Logo" class="logo" />
 
-    <main class = "detail-container">
-    <!-- NAV -->
-    <header>
-        <nav class = "navbar">
-            <a href="class.html">Classes</a>
-            <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
-            <a href= "cart.html" class = "cart-link">
-                <span class = "material-icons">shopping_cart</span>
-                <span id = "cart-badge" class="cart-badge"></span>
-            </a>
+      <div class="info-items-group">
+        <div class="info-item">
+          <img src="images/location_desktop.png" alt="Location" />
+          <div>
+            <p class="info-label">Location:</p>
+            <p class="info-value">Spotswood</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/phone_desktop.png" alt="Phone" />
+          <div>
+            <p class="info-label">Phone:</p>
+            <p class="info-value">0431 418 688</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/opening_hours_desktop.png" alt="Hours" />
+          <div>
+            <p class="info-label">Opening Hours:</p>
+            <p class="info-value">Open 7 Days: 8:00am - 5:00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Bar (Desktop) -->
+    <nav class="navbar desktop-nav">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="class.html" class="nav-link">Classes</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+        <a href="#" class="nav-link disabled">Meet Our Team</a>
+        <a href="#" class="nav-link disabled">Contact</a>
+      </div>
+    </nav>
+    <main class="detail-container">
+      <!-- NAV -->
+      <header>
+        <nav class="navbar">
+          <a href="class.html">Classes</a>
+          <img src="images/logo.png" alt="Planet K9 Logo" class="logo" />
+          <a href="cart.html" class="cart-link">
+            <span class="material-icons">shopping_cart</span>
+            <span id="cart-badge" class="cart-badge"></span>
+          </a>
         </nav>
-    </header>
+      </header>
 
-    <!-- Class Image -->
-    <img id="class-image" src="" alt="" class="detail-img">
+      <!-- Class Image -->
+      <img id="class-image" src="" alt="" class="detail-img" />
 
-    <section class="paddedContainer">
+      <section class="paddedContainer">
         <!-- Class Info -->
         <div class="class-info">
-            <p id="class-level"></p>
-            <h2 id="class-name"></h2>
-            <p id="class-location"></p>
+          <p id="class-level"></p>
+          <h2 id="class-name"></h2>
+          <p id="class-location"></p>
         </div>
 
         <!-- Date Pills -->
-        <div class ="date-section">
-            <h4>Date Selection: <span class = "time-note">All Classes run from 9:00 AM</span></h4>
-            <div id="date-pills"></div>
+        <div class="date-section">
+          <h4>
+            Date Selection:
+            <span class="time-note">All Classes run from 9:00 AM</span>
+          </h4>
+          <div id="date-pills"></div>
         </div>
-
 
         <!-- Whats Included -->
-        <div class ="included-section">
-            <h3>What's Included:</h3>
-            <div id="included-list"></div>
+        <div class="included-section">
+          <h3>What's Included:</h3>
+          <div id="included-list"></div>
         </div>
+      </section>
 
-    </section>
-    
-    <!-- Price -->
-    <div class="price-section">
+      <!-- Price -->
+      <div class="price-section">
         <div class="price-label">Class Price</div>
         <p id="class-price"></p>
         <button id="book-button" onclick="addToCart()">BOOK NOW</button>
-    </div>
- 
+      </div>
     </main>
-
 
     <script src="js/classes.js"></script>
     <script src="js/shared.js"></script>
     <script src="js/class-details.js"></script>
-</body>
+  </body>
 </html>
