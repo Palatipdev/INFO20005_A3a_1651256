@@ -632,23 +632,16 @@ body {
 
 .confirm-navbar {
   display: flex;
-  justify-content: center; /* Centers the logo */
+  justify-content: center;
   align-items: center;
   background-color: var(--primary);
   padding: 10px 16px;
-}
-.paw-decoration {
-  width: 60px;
-  position: absolute;
-  top: 120px;
-  left: 15px;
-  opacity: 0.6;
 }
 
 .confirmation-card {
   background: var(--gray);
   padding: 30px 20px;
-  margin: 40px 0 -10px 0;
+  margin: 40px 15px;
   border-radius: 8px;
   text-align: center;
 }
@@ -693,6 +686,7 @@ body {
 
 .contact-info {
   margin-top: 20px;
+  margin-bottom: 30px; /* Space before button */
 }
 
 .contact-info p {
@@ -700,21 +694,47 @@ body {
   font-size: 14px;
 }
 
-.dog-peeking {
-  width: 100%;
-  max-width: 400px;
+/* Button inside the confirmation card */
+.confirmation-card .checkout-btn {
+  width: 90%;
+  margin: 20px auto 0 auto;
   display: block;
 }
 
-.confirmation-footer {
-  text-align: center;
-  margin-top: -5px;
-}
+
 
 /* Desktop Styling */
 @media (min-width: 1440px) {
   body {
     max-width: 1440px;
+    overflow-x: hidden;
+  }
+
+  header .navbar .cart-link {
+    display: none; /* Hides mobile nav cart icon */
+  }
+
+  /* Make sure desktop nav cart link is visible */
+  .desktop-nav .cart-link {
+    display: inline-block; /* Shows desktop nav cart link */
+    position: relative;
+  }
+
+  /* Style the cart badge for desktop */
+  .desktop-nav .cart-badge {
+    position: absolute;
+    background: var(--accent);
+    top: -5px;
+    right: -10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: none; /* Hidden until items added */
+    text-align: center;
+    line-height: 20px;
   }
 
   header .navbar {
@@ -855,9 +875,8 @@ body {
     padding: 40px 60px; /* More breathing room */
   }
 
-
   .section-header {
-    font-size: 24px; 
+    font-size: 24px;
     padding: 20px 60px;
     margin: -40px -60px 30px -60px;
   }
@@ -866,8 +885,18 @@ body {
   .classArea {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
-    gap: 30px; 
-    overflow-x: visible;}
+    gap: 30px;
+    overflow-x: visible;
+  }
+
+  .button-wrapper {
+    background: var(--gray);
+    padding: 30px 20px;
+    margin-top: 0;  /* No overlap, sits flush below dog */
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
 
   /* Cards - bigger and taller */
   .class-card {
@@ -878,13 +907,13 @@ body {
 
   /* Card images - larger */
   .class-card img {
-    width: 180px; 
+    width: 180px;
     height: 250px;
   }
 
   /* Card text - bigger */
   .class-card .level {
-    font-size: 17px; 
+    font-size: 17px;
   }
 
   .class-card h3 {
@@ -899,115 +928,505 @@ body {
 
   /* Button bigger */
   .class-card button {
-    padding: 12px; 
-    font-size: 14px; 
+    padding: 12px;
+    font-size: 14px;
   }
 
   .detail-container {
+    display: grid;
+    grid-template-columns: 500px 1fr; /* Image column 500px, content fills rest */
+    grid-template-rows: auto auto auto;
+    gap: 40px 60px; /* 40px vertical, 60px horizontal gap */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+  }
+
+  /* Nav bar spans both columns */
+  header {
+    grid-column: 1 / -1;
+  }
+
+  /* Image - left column, spans all rows */
+  .detail-img {
+    grid-column: 1;
+    grid-row: 2 / -1; /* Start after nav, span to bottom */
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  /* Padded container - right column */
+  .paddedContainer {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 0; /* Remove padding, using grid gap */
+  }
+
+  /* Price section - right column, below content */
+  .price-section {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+  }
+
+  /* Bigger text for desktop */
+  #class-level {
+    font-size: 14px;
+  }
+
+  #class-name {
+    font-size: 32px;
+    margin: 8px 0;
+  }
+
+  #class-location {
+    font-size: 16px;
+  }
+
+  .date-section h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .time-note {
+    font-size: 14px;
+  }
+
+  /* Date pills - allow wrapping */
+  #date-pills {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .date-pill {
+    min-width: 90px;
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  /* What's Included section */
+  .included-section {
+    margin: 20px 0;
+  }
+
+  .included-section h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  #included-list p {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  /* Price section */
+  .price-label {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  #class-price {
+    font-size: 42px;
+    margin: 20px 0;
+  }
+
+  #book-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  /* Main cart container - grid layout */
+  .cart-container {
+    display: grid;
+    grid-template-columns: 1fr 400px; /* Left content, right sidebar 400px */
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+  }
+
+  /* Left column - cart items + dog details */
+  .cart-left {
+    grid-column: 1;
+  }
+
+  /* Right column - order summary + checkout button */
+  .cart-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .cart-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 450px; /* Left content, right sidebar */
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    align-items: start; /* Align to top */
+  }
+
+  /* Class summary header - only in left column */
+  .class-summary-header {
+    font-size: 28px;
+    padding-bottom: 15px;
+    margin: 0 0 30px 0;
+    border-bottom: 2px solid var(--black);
+  }
+
+  /* Cart items - bigger cards with borders */
+  .cart-item {
+    margin: 0 0 30px 0;
+    padding: 25px 0;
+    display: flex;
+    gap: 30px;
+    border-bottom: 2px solid #e0e0e0; /* Separator between cards */
+  }
+
+  .cart-item:last-of-type {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+  .cart-image {
+    width: 200px;
+    height: 220px;
+    border-radius: 8px;
+  }
+
+  .cart-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cart-details h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--black);
+  }
+
+  .cart-details p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .remove-btn {
+    font-size: 16px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+
+  /* Separator after cart items, before dog details */
+  #cart-items {
+    padding-bottom: 40px;
+    border-bottom: 3px solid #ccc;
+    margin-bottom: 40px;
+  }
+
+  /* Dog details card */
+  .dog-details-card {
+    order: 1; /* First */
+    margin: 0;
+    padding: 25px;
+    background: var(--gray);
+    border-radius: 8px;
+  }
+
+  .dog-details-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dog-form label {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .dog-input {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .add-dog-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+
+  /* Order summary - no background box, just text */
+  .order-summary {
+    order: 2; /* Second */
+  }
+
+  .order-summary h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: left; /* Left align, not center */
+    font-weight: 700;
+  }
+
+  .order-summary p {
+    font-size: 17px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd; /* Border between items */
+  }
+
+  .order-summary p:last-of-type {
+    border-bottom: none; /* No border on last item before total */
+  }
+
+  .total {
+    font-size: 26px;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 2px solid var(--black); /* Thicker border for total */
+    border-bottom: none;
+  }
+
+  /* Checkout button */
+  .checkout-btn {
+    width: 100%;
+    margin: -20px 0 0 0;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    order: 3;
+  }
+
+    /* Existing styles... */
+    
+    /* Checkout page - two column layout */
+    .checkout-page-wrapper {
         display: grid;
-        grid-template-columns: 500px 1fr;  /* Image column 500px, content fills rest */
-        grid-template-rows: auto auto auto;
-        gap: 40px 60px;  /* 40px vertical, 60px horizontal gap */
+        grid-template-columns: 1fr 450px;
+        gap: 80px;
         max-width: 1300px;
         margin: 0 auto;
         padding: 40px 60px;
     }
     
-    /* Nav bar spans both columns */
-    header {
-        grid-column: 1 / -1;
+    /* Checkout header - left column only */
+    .checkout-text {
+        font-size: 28px;
+        padding-bottom: 15px;
+        margin: 0 0 30px 0;
+        border-bottom: 2px solid var(--black);
     }
     
-    /* Image - left column, spans all rows */
-    .detail-img {
-        grid-column: 1;
-        grid-row: 2 / -1;  /* Start after nav, span to bottom */
-        width: 100%;
-        height: auto;
-        max-height: none;
+    /* Card form - full width in left column */
+    .card-form {
+        background: var(--gray);
+        padding: 30px;
+        margin: 0 0 40px 0;
+        border-radius: 8px;
+    }
+    
+    .card-form label {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--dark-gray);
+    }
+    
+    .card-input {
+        padding: 14px;
+        font-size: 15px;
+        margin-top: 8px;
+    }
+    
+    /* Expiry and CVV side by side */
+    .card-form-flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    /* Dog details confirmation - left column */
+    .dog-details-card {
+        background: var(--gray);
+        padding: 30px;
         margin: 0;
         border-radius: 8px;
     }
     
-    /* Padded container - right column */
-    .paddedContainer {
-        grid-column: 2;
-        grid-row: 2;
-        padding: 0;  /* Remove padding, using grid gap */
+    .dog-details-card h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
     }
     
-    /* Price section - right column, below content */
-    .price-section {
-        grid-column: 2;
-        grid-row: 3;
-        margin: 0;
-    }
-    
-    /* Bigger text for desktop */
-    #class-level {
-        font-size: 14px;
-    }
-    
-    #class-name {
-        font-size: 32px;
-        margin: 8px 0;
-    }
-    
-    #class-location {
+    .dog-form label {
         font-size: 16px;
+        margin-bottom: 20px;
     }
     
-    .date-section h4 {
-        font-size: 16px;
-        margin-bottom: 12px;
-    }
-    
-    .time-note {
-        font-size: 14px;
-    }
-    
-    /* Date pills - allow wrapping */
-    #date-pills {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    
-    .date-pill {
-        min-width: 90px;
-        padding: 14px 12px;
-        font-size: 14px;
-    }
-    
-    /* What's Included section */
-    .included-section {
-        margin: 20px 0;
-    }
-    
-    .included-section h3 {
-        font-size: 20px;
-        margin-bottom: 16px;
-    }
-    
-    #included-list p {
-        font-size: 15px;
-        margin-bottom: 8px;
-    }
-    
-    /* Price section */
-    .price-label {
-        font-size: 20px;
+    .dog-input {
         padding: 12px;
+        font-size: 15px;
     }
     
-    #class-price {
-        font-size: 42px;
-        margin: 20px 0;
+    /* Right column - Cart Totals */
+    .checkout-right {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
-    
-    #book-button {
-        width: 100%;
-        padding: 20px;
-        font-size: 18px;
-    }
-}
 
+        .checkout-right .order-summary h3 {
+        font-size: 24px;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+        .checkout-right .order-summary p {
+        font-size: 17px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .checkout-right .total {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid var(--black);
+        border-bottom: none;
+    }
+    
+    .cart-totals {
+        background: transparent;
+        padding: 0;
+    }
+    
+    .cart-totals h3 {
+        font-size: 24px;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+    
+    .cart-totals p {
+        font-size: 17px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .subtotal,
+    .discount {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .estimated-total {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid var(--black);
+    }
+    .confirm-navbar {
+      display: none;
+    }
+
+    .confirmation-page,
+    main.paddedContainer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 80px 60px;
+    }
+    
+    /* Hide paw decoration */
+    .paw-decoration {
+        display: none;
+    }
+    
+    /* Confirmation card - more padding, centered */
+    .confirmation-card {
+        background: var(--gray);
+        padding: 60px 80px;
+        margin: 0 auto 60px auto;
+        max-width: 900px;
+        border-radius: 12px;
+    }
+    
+    /* Header - bigger */
+    .confirmation-header {
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .confirmation-header h1 {
+        font-size: 42px;
+        font-weight: 800;
+    }
+    
+
+
+
+
+    .tick-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Booked classes - centered, no borders, bigger text */
+    .booked-classes {
+        text-align: center;
+        margin: 40px 0;
+        padding: 0;
+        border: none;
+    }
+    
+    .booked-classes p {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 15px 0;
+        color: var(--black);
+    }
+    
+    /* Message - bigger */
+    .confirmation-message {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 40px 0;
+        text-align: center;
+    }
+    
+    /* Dogs divider - more spacing */
+    .dogs-divider {
+        gap: 30px;
+        margin: 50px 0;
+        padding: 30px 0;
+    }
+    
+    .dogs-divider img {
+        width: 70px;
+    }
+    
+    /* Contact info - bigger text */
+    .contact-info {
+        margin-top: 30px;
+    }
+    
+    .contact-info p {
+        font-size: 17px;
+        margin: 12px 0;
+    }
+    
+    .contact-info strong {
+        font-weight: 700;
+    }
+    
+
+
+
+
+}

@@ -5,12 +5,7 @@ const classID = parseInt(params.get('id'))
 const selectedClass = classes.find(c => c.id === classID)
 
 
-function selectDate(element){
-    document.querySelectorAll(".date-pill").forEach(pill => {
-        pill.classList.remove('selected');
-    });
-    element.classList.add('selected')
-}
+
 
 function renderClassDetail() {
     // connecting each properties to html elems
@@ -39,7 +34,15 @@ function renderClassDetail() {
     })
 }
 
-renderClassDetail();
+
+function selectDate(element){
+    document.querySelectorAll(".date-pill").forEach(pill => {
+        pill.classList.remove('selected');
+    });
+    element.classList.add('selected')
+}
+
+
 
 
 
@@ -94,4 +97,4 @@ function addToCart(){
     }, 750);
 }
 
-
+renderClassDetail();

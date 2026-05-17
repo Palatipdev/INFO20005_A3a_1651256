@@ -68,3 +68,11 @@ Switched to semantic <a> tag for reliability and better accessibility.
     <a href="confirmation.html" class="checkout-btn">CONFIRM BOOKING</a>
 
 ```
+
+
+### BUG 3: Viewport Inconsistencies
+##
+Encountered viewport rendering inconsistencies in Chrome DevTools across monitors with different DPI scaling, 
+
+## Solution
+resolved by standardizing testing environment to primary display.

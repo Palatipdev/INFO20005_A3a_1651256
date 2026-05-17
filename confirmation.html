@@ -9,35 +9,71 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-            <!-- NAV -->
+
+    <!-- Information Bar -->
+    <div class="info-bar">
+      <img src="images/logo.png" alt="Planet K9 Logo" class="logo" />
+
+      <div class="info-items-group">
+        <div class="info-item">
+          <img src="images/location_desktop.png" alt="Location" />
+          <div>
+            <p class="info-label">Location:</p>
+            <p class="info-value">Spotswood</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/phone_desktop.png" alt="Phone" />
+          <div>
+            <p class="info-label">Phone:</p>
+            <p class="info-value">0431 418 688</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/opening_hours_desktop.png" alt="Hours" />
+          <div>
+            <p class="info-label">Opening Hours:</p>
+            <p class="info-value">Open 7 Days: 8:00am - 5:00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar (Desktop) -->
+    <nav class="navbar desktop-nav">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="class.html" class="nav-link">Classes</a>
+        <a href="cart.html" class="nav-link cart-link">Cart<span id="cart-badge" class="cart-badge"></span></a>
+        <a href="#" class="nav-link disabled">Meet Our Team</a>
+        <a href="#" class="nav-link disabled">Contact</a>
+      </div>
+    </nav>
+
+    <!-- NAV (Mobile) -->
     <header>
-        <nav class = "confirm-navbar">
-            <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
+        <nav class="confirm-navbar">
+            <img src="images/logo.png" alt="Planet K9 Logo" class="logo">
         </nav>
-    <header>
+    </header>
 
     <main class="paddedContainer">
-        <!-- Paw Icon Top Left -->
-        <img src="images/dogPaw.png" alt="Paw" class="paw-decoration">
-
         <section class="confirmation-card">
-
             <div class="confirmation-header">
                 <img src="images/tickmark.png" alt="Checkmark" class="tick-icon">
                 <h1>Booking Confirmed!</h1>
                 <img src="images/tickmark.png" alt="Checkmark" class="tick-icon">
             </div>
+            
+            <!-- Show booked classes -->
+            <div class="booked-classes" id="booked-classes">
+                <!-- Filled by JS -->
+            </div>
 
             <p class="confirmation-message">We're excited to see you at the session!</p>
 
             <!-- Running Dogs Divider -->
-            <div class="dogs-divider">
-                <img src="images/blackdog.png" alt="Dog">
-                <img src="images/blackdog.png" alt="Dog">
-                <img src="images/blackdog.png" alt="Dog">
-                <img src="images/blackdog.png" alt="Dog">
-                <img src="images/blackdog.png" alt="Dog">
-            </div>
+            <div class="dogs-divider"></div>
 
             <!-- Contact Info -->
             <div class="contact-info">
@@ -45,17 +81,10 @@
                 <p><strong>Contact: 0431 418 688</strong></p>
                 <p><strong>Email: PlanetK9@gmail.com</strong></p>
             </div>
-        </section>
 
-
-                <!-- Dog Peeking Image -->
-        <img src="images/dog-peeking.png" alt="Dog peeking" class="dog-peeking">
-
-        <!-- Footer Text & Button -->
-        <div class="confirmation-footer">
+            <!-- Back to Home Button (inside the card now) -->
             <a href="index.html" class="checkout-btn">BACK TO HOME</a>
-        </div>
-
+        </section>
     </main>
 
     <script src="js/classes.js"></script>

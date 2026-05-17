@@ -9,10 +9,31 @@ function addBlackDogs(){
     }
 }
 
-addBlackDogs();
+function displayBookedClasses() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const bookedClasses = document.getElementById('booked-classes');
+    
+    if (cart.length === 0) {
+        bookedClasses.innerHTML = '<p>No classes booked.</p>';
+        return;
+    }
+    
+    bookedClasses.innerHTML = '';
+    
+    cart.forEach(item => {
+        bookedClasses.innerHTML += `
+            <p><strong>${item.name}:</strong> ${item.date} 2026</p>
+        `;
+    });
+}
+
+
 
 setTimeout(() => {
     localStorage.removeItem('cart');
     updateCartBadge();
 }, 1000);
+
+addBlackDogs();
+displayBookedClasses();
 

@@ -1,69 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Page</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-        <!-- NAV -->
-    <header>
-        <nav class = "navbar">
-            <a href="class.html">Classes</a>
-            <img src="images/logo.png" alt = "Planet K9 Logo" class = "logo">
-            <a href= "cart.html" class = "cart-link">
-                <span class = "material-icons">shopping_cart</span>
-                <span id = "cart-badge" class="cart-badge"></span>
-            </a>
-        </nav>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Information Bar -->
+    <div class="info-bar">
+      <img src="images/logo.png" alt="Planet K9 Logo" class="logo" />
 
+      <div class="info-items-group">
+        <div class="info-item">
+          <img src="images/location_desktop.png" alt="Location" />
+          <div>
+            <p class="info-label">Location:</p>
+            <p class="info-value">Spotswood</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/phone_desktop.png" alt="Phone" />
+          <div>
+            <p class="info-label">Phone:</p>
+            <p class="info-value">0431 418 688</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="images/opening_hours_desktop.png" alt="Hours" />
+          <div>
+            <p class="info-label">Opening Hours:</p>
+            <p class="info-value">Open 7 Days: 8:00am - 5:00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar (Desktop) -->
+    <nav class="navbar desktop-nav">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="class.html" class="nav-link">Classes</a>
+            <a href="cart.html" class="nav-link cart-link">Cart<span id="cart-badge" class="cart-badge"></span></a>
+
+        <a href="#" class="nav-link disabled">Meet Our Team</a>
+        <a href="#" class="nav-link disabled">Contact</a>
+      </div>
+    </nav>
+
+    <!-- NAV -->
+    <header>
+      <nav class="navbar">
+        <a href="class.html">Classes</a>
+        <img src="images/logo.png" alt="Planet K9 Logo" class="logo" />
+        <a href="cart.html" class="cart-link">
+          <span class="material-icons">shopping_cart</span>
+          <span id="cart-badge" class="cart-badge"></span>
+        </a>
+      </nav>
     </header>
 
-    <p class="checkout-text">Checkout:</p>
-  
-    <!-- Card Checkout -->
-    <section class="card-form">
-        <label>Cardholder Name: <input type="text" value="Palatip Boonmeerit" class="card-input"></label>
-        <label>Card Number: <input type="text" value="**** **** **** 1289" class="card-input"></label>
-        <div class="card-form-flex">
-            <label>Expiry: <input type="text" value="09/28" class="card-input"></label>
-            <label>CVV/CVC: <input type="text" value="123" class="card-input"></label>
-        </div>
-    </section>
+    <!-- Checkout Page Wrapper -->
+    <div class="checkout-page-wrapper">
+      <!-- LEFT COLUMN -->
+      <div class="checkout-left">
+        <p class="checkout-text">Checkout:</p>
 
-    <!-- Dog Details Placeholder -->
-    <section class="dog-details-card">
-        <h3>Dog Details Confirmation:</h3>
-        <div class="dog-form">
-            <label>Name: <input type="text" value="Jack" class="dog-input"></label>
-            <label>Age: <input type="text" value="12 Months" class="dog-input"></label>
-            <label>Traits: <input type="text" value="Playful and Optimistic" class="dog-input"></label>
-        </div>
-    </section>
+        <!-- Card Form -->
+        <section class="card-form">
+          <label
+            >Cardholder Name:
+            <input type="text" value="Palatip Boonmeerit" class="card-input" />
+          </label>
+          <label
+            >Card Number:
+            <input type="text" value="**** **** **** 1289" class="card-input" />
+          </label>
+          <div class="card-form-flex">
+            <label
+              >Expiry:
+              <input type="text" value="09/28" class="card-input" />
+            </label>
+            <label
+              >CVV/CVC:
+              <input type="text" value="123" class="card-input" />
+            </label>
+          </div>
+        </section>
 
-    <!-- Order Summary -->
-    <section class="order-summary">
-        <h3>Order Summary:</h3>
-        <div id="order-items"></div>
-        <p class="total">
-            <span>Total:</span> <span id="total-price">$0</span>
-        </p>
-    </section>
+        <!-- Dog Details Confirmation -->
+        <section class="dog-details-card">
+          <h3>Dog Details Confirmation:</h3>
+          <div class="dog-form">
+            <label
+              >Name:
+              <input type="text" value="Jack" class="dog-input" />
+            </label>
+            <label
+              >Age:
+              <input type="text" value="12 Months" class="dog-input" />
+            </label>
+            <label
+              >Traits:
+              <input
+                type="text"
+                value="Playful and Optimistic"
+                class="dog-input"
+              />
+            </label>
+          </div>
+        </section>
+      </div>
 
+      <!-- RIGHT COLUMN -->
+      <div class="checkout-right">
+        <!-- Cart Totals -->
+        <section class="order-summary">
+          <h3>Order Summary:</h3>
+          <div id="order-items"></div>
+          <p class="total">
+            <span>Total:</span>
+            <span id="total-price">$0</span>
+          </p>
+        </section>
 
-
-    <a href="confirmation.html" class="checkout-btn">CONFIRM BOOKING</a>
-
-
-
-
+        <!-- Confirm Booking Button -->
+        <a href="confirmation.html" class="checkout-btn">CONFIRM BOOKING</a>
+      </div>
+    </div>
 
     <script src="js/classes.js"></script>
     <script src="js/shared.js"></script>
     <script src="js/checkout.js"></script>
-
-</body>
+  </body>
 </html>
