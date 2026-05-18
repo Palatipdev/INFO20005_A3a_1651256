@@ -1,4 +1,6 @@
-/* Declaring color's variable */
+/* ============================================
+   VARIABLES & RESET
+   ============================================ */
 :root {
   --primary: #0553b1;
   --accent: #c4720a;
@@ -9,14 +11,17 @@
   --dark-gray: #9c9fa3;
 }
 
-/* Removes Browser's spacing , border box overflow */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Setting Screen Width and Fonts */
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   background: var(--white);
@@ -25,17 +30,12 @@ body {
   margin: 0 auto;
 }
 
-/* hiding desktop nav bar */
+/* ============================================
+   NAVIGATION - MOBILE
+   ============================================ */
 .info-bar {
   display: none;
 }
-
-.paddedContainer {
-  padding: 0 15px;
-  max-width: 100%;
-}
-
-/* NAV */
 
 .navbar {
   background: var(--primary);
@@ -63,6 +63,7 @@ body {
 }
 
 .cart-link {
+  position: relative;
   color: white;
   text-decoration: none;
 }
@@ -71,7 +72,25 @@ body {
   font-size: 28px;
 }
 
-/* HERO */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: none;
+  text-align: center;
+  line-height: 18px;
+}
+
+/* ============================================
+   HOMEPAGE - HERO SECTION
+   ============================================ */
 .hero {
   position: relative;
   width: 100%;
@@ -97,7 +116,9 @@ body {
   color: var(--black);
 }
 
-/* CTA BUTTONS */
+/* ============================================
+   HOMEPAGE - CTA BUTTONS
+   ============================================ */
 .cta-buttons {
   display: flex;
   gap: 12px;
@@ -119,14 +140,17 @@ body {
   padding: 28px 20px;
   font-weight: 700;
   font-size: 15px;
+  border-radius: 8px;
 }
 
-/* Badges */
+/* ============================================
+   HOMEPAGE - TRUST BADGES
+   ============================================ */
 .trust-badges {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  padding: 16px 60px;
 }
 
 .badge {
@@ -164,12 +188,19 @@ body {
   font-weight: 700;
   margin-bottom: 8px;
 }
+
 .badge p {
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* Class sections */
+/* ============================================
+   CLASS LISTING PAGE
+   ============================================ */
+.paddedContainer {
+  padding: 0 15px;
+  max-width: 100%;
+}
 
 .puppy-training,
 .dog-training {
@@ -188,13 +219,6 @@ body {
   background-color: var(--dark-gray);
 }
 
-.puppy-training p,
-.dog-training p {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
 .section-header {
   background-color: var(--white);
   padding: 12px 16px;
@@ -203,24 +227,21 @@ body {
   margin: -16px -16px 12px -16px;
 }
 
-/* Horizontal scroll class container */
 .classArea {
   display: flex;
   flex-direction: row;
-  /* automatic scrollbar */
   overflow-x: auto;
   gap: 12px;
   padding-bottom: 12px;
-  /* Hide scrollbar but keep scroll functional (firefox) */
   scrollbar-width: none;
   flex: 1;
   align-items: center;
 }
 
-/* Hide scrollbar from chrome and safari */
 .classArea::-webkit-scrollbar {
   display: none;
 }
+
 .class-card {
   background-color: var(--white);
   min-width: 250px;
@@ -243,7 +264,6 @@ body {
 .class-card img {
   width: 120px;
   height: 140px;
-  /* same height across all cards */
   object-fit: cover;
   margin-top: 10px;
 }
@@ -270,24 +290,21 @@ body {
 }
 
 .class-card button {
-  margin-top: 8px;
+  margin-top: auto;
   width: 100%;
   padding: 10px;
   background: var(--accent);
   color: var(--white);
   border: none;
-  /* form element, browser apply auto font */
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 13px;
-  /* indicate clickable */
   cursor: pointer;
-  /* pushes the button to the atmost bottom of the card */
-  margin-top: auto;
 }
 
-/* CLASS DETAILS */
-
+/* ============================================
+   CLASS DETAIL PAGE
+   ============================================ */
 .detail-img {
   width: 50%;
   max-height: 250px;
@@ -296,7 +313,6 @@ body {
   margin: 10px auto;
 }
 
-/* Class Info */
 .class-info {
   margin: 16px 0;
 }
@@ -327,7 +343,6 @@ body {
   font-style: italic;
 }
 
-/* Date Selection */
 .date-section {
   margin: 16px 0;
 }
@@ -357,7 +372,6 @@ body {
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
-  /* original  size when scaled */
   flex-shrink: 0;
 }
 
@@ -366,8 +380,6 @@ body {
   color: white;
   border-color: var(--primary);
 }
-
-/* Whats Included */
 
 .included-section {
   background: var(--gray);
@@ -395,17 +407,15 @@ body {
   font-weight: 700;
 }
 
-/* Price and Book */
 .price-section {
   text-align: center;
   margin: 16px 0;
 }
 
 .price-label {
-  background: var(--primary);
-  color: white;
-  padding: 8px;
+  color: var(--primary);
   font-weight: 700;
+  font-size: 18px;
 }
 
 #class-price {
@@ -427,47 +437,22 @@ body {
   cursor: pointer;
 }
 
-/* CART */
-
-.cart-link {
-  position: relative;
-}
-
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: var(--accent);
-  color: white;
-  font-size: 11px;
-  font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: none;
-  text-align: center;
-  line-height: 18px;
-}
-
+/* ============================================
+   CART PAGE
+   ============================================ */
 .class-summary-header {
   font-weight: 700;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--black);
-  border-bottom-style: solid;
+  border-bottom: 1px solid var(--black);
   font-size: 20px;
   margin: 10px 10px;
 }
 
-/* cart items */
+
 .cart-item {
   margin: 10px auto;
   display: flex;
   gap: 35px;
   margin-left: 30px;
-}
-
-.cart-details {
-  gap: 40px;
 }
 
 .cart-image {
@@ -491,7 +476,6 @@ body {
   font-weight: 600;
 }
 
-/* dog detail box */
 .dog-details-card {
   background: var(--gray);
   padding: 20px;
@@ -515,17 +499,18 @@ body {
 
 .dog-form label {
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: block;
 }
 
 .dog-input {
-  flex: 1;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .add-dog-btn {
@@ -565,7 +550,6 @@ body {
   color: var(--accent);
   margin-top: 15px;
   padding-top: 15px;
-  /* Separate total from items */
   border-top: 1px solid #ccc;
 }
 
@@ -581,19 +565,24 @@ body {
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px; /* Slight rounding */
+  border-radius: 4px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
-/* CHECKOUT PAGE */
-
+/* ============================================
+   CHECKOUT PAGE
+   ============================================ */
 .checkout-text {
   font-weight: 700;
   font-size: 20px;
   border-bottom: 2px solid var(--black);
   padding: 10px 15px 15px 15px;
   margin: 10px 15px;
+}
+
+.card-header{
+  margin-bottom: 15px
 }
 
 .card-form {
@@ -628,8 +617,9 @@ body {
   flex: 1;
 }
 
-/* CONFIRMATION PAGE */
-
+/* ============================================
+   CONFIRMATION PAGE
+   ============================================ */
 .confirm-navbar {
   display: flex;
   justify-content: center;
@@ -686,7 +676,7 @@ body {
 
 .contact-info {
   margin-top: 20px;
-  margin-bottom: 30px; /* Space before button */
+  margin-bottom: 30px;
 }
 
 .contact-info p {
@@ -694,71 +684,105 @@ body {
   font-size: 14px;
 }
 
-/* Button inside the confirmation card */
 .confirmation-card .checkout-btn {
   width: 90%;
   margin: 20px auto 0 auto;
   display: block;
 }
 
+/* ============================================
+   SITE FOOTER
+   ============================================ */
+.site-footer {
+  background: var(--primary);
+  color: white;
+  padding: 32px 24px 16px;
+  margin-top: 40px;
+}
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
 
-/* Desktop Styling */
-@media (min-width: 1440px) {
+.footer-brand {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.footer-section h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section a.disabled {
+  pointer-events: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 16px;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ============================================
+   DESKTOP STYLES - 1024px+
+   ============================================ */
+@media (min-width: 1024px) {
+  /* BODY & OVERFLOW FIX */
   body {
     max-width: 1440px;
-    overflow-x: hidden;
   }
 
-  header .navbar .cart-link {
-    display: none; /* Hides mobile nav cart icon */
-  }
-
-  /* Make sure desktop nav cart link is visible */
-  .desktop-nav .cart-link {
-    display: inline-block; /* Shows desktop nav cart link */
-    position: relative;
-  }
-
-  /* Style the cart badge for desktop */
-  .desktop-nav .cart-badge {
-    position: absolute;
-    background: var(--accent);
-    top: -5px;
-    right: -10px;
-    color: white;
-    font-size: 12px;
-    font-weight: 700;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: none; /* Hidden until items added */
-    text-align: center;
-    line-height: 20px;
-  }
-
+  /* NAVIGATION - DESKTOP */
   header .navbar {
     display: none;
   }
 
-  .desktop-nav {
-    display: flex;
-    justify-content: center;
-    background: var(--primary);
-    padding: 15px 40px;
-  }
-
   .nav-links {
     display: flex;
-    gap: 150px;
+    gap: 30px;
+    align-items: center;
   }
 
   .nav-link {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 8px 14px;
     border-radius: 4px;
+    font-size: 15px;
   }
 
   .nav-link.active {
@@ -766,14 +790,36 @@ body {
   }
 
   .nav-link.disabled {
-    opacity: 0.5;
     pointer-events: none;
   }
 
-  .cart-link {
+  /* Cart link - show in info-bar nav, hide mobile icon */
+  header .navbar .cart-link {
     display: none;
   }
 
+  .info-bar .cart-link {
+    display: inline-block;
+    position: relative;
+  }
+
+  .info-bar .cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--accent);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: none;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  /* INFO BAR - DESKTOP */
   .info-bar {
     display: flex;
     justify-content: space-between;
@@ -783,56 +829,41 @@ body {
   }
 
   .info-bar .logo {
-    width: 110px;
-    height: 110px;
+    width: 75px;
+    height: 75px;
   }
 
   .info-items-group {
     display: flex;
-    gap: 40px;
+    gap: 32px;
     align-items: center;
   }
 
   .info-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: white;
   }
 
   .info-item img {
-    width: 90px;
-    height: 90px;
+    width: 55px;
+    height: 55px;
   }
 
   .info-label {
-    font-size: 13px;
-    margin-top: 15px;
+    font-size: 12px;
+    margin-top: 10px;
     font-weight: 400;
   }
 
   .info-value {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0;
   }
 
-  .trust-badges {
-    display: grid;
-    /* Split into 3 columns */
-    grid-template-columns: repeat(3, 1fr); /* equal width */
-  }
-
-  .badge-no-paw .paw-icon {
-    display: none;
-  }
-
-  .badge-paw-right .paw-icon {
-    right: -55px;
-    left: auto;
-    transform: scaleX(-1);
-  }
-
+  /* HOMEPAGE - HERO */
   .hero {
     height: 500px;
     overflow: hidden;
@@ -855,7 +886,7 @@ body {
     font-size: 28px;
   }
 
-  /* CTA buttons side-by-side, positioned over hero */
+  /* HOMEPAGE - CTA BUTTONS */
   .cta-buttons {
     margin-top: -80px;
     max-width: 600px;
@@ -869,10 +900,28 @@ body {
     font-size: 16px;
   }
 
+  /* HOMEPAGE - TRUST BADGES */
+  .trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px 70px;
+  }
+
+  .badge-no-paw .paw-icon {
+    display: none;
+  }
+
+  .badge-paw-right .paw-icon {
+    right: -55px;
+    left: auto;
+    transform: scaleX(-1);
+  }
+
+  /* CLASS LISTING PAGE */
   .puppy-training,
   .dog-training {
-    min-height: auto; /* Remove fixed height */
-    padding: 40px 60px; /* More breathing room */
+    min-height: auto;
+    padding: 40px 60px;
   }
 
   .section-header {
@@ -881,37 +930,26 @@ body {
     margin: -40px -60px 30px -60px;
   }
 
-  /* Class cards - grid layout instead of scroll */
   .classArea {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
     gap: 30px;
-    overflow-x: visible;
+    scrollbar-width: thin;
   }
 
-  .button-wrapper {
-    background: var(--gray);
-    padding: 30px 20px;
-    margin-top: 0;  /* No overlap, sits flush below dog */
-    border-radius: 12px;
-    position: relative;
-    z-index: 1;
-}
-
-  /* Cards - bigger and taller */
   .class-card {
-    min-width: auto; /* Remove mobile min-width */
+    min-width: 300px;
     height: auto;
-    min-height: 320px; /* Taller cards */
+    min-height: 320px;
+    flex-shrink: 0;
   }
 
-  /* Card images - larger */
   .class-card img {
     width: 180px;
     height: 250px;
   }
 
-  /* Card text - bigger */
   .class-card .level {
     font-size: 17px;
   }
@@ -926,31 +964,29 @@ body {
     margin-bottom: 8px;
   }
 
-  /* Button bigger */
   .class-card button {
     padding: 12px;
     font-size: 14px;
   }
 
+  /* CLASS DETAIL PAGE */
   .detail-container {
     display: grid;
-    grid-template-columns: 500px 1fr; /* Image column 500px, content fills rest */
+    grid-template-columns: 500px 1fr;
     grid-template-rows: auto auto auto;
-    gap: 40px 60px; /* 40px vertical, 60px horizontal gap */
+    gap: 40px 60px;
     max-width: 1300px;
     margin: 0 auto;
     padding: 40px 60px;
   }
 
-  /* Nav bar spans both columns */
   header {
     grid-column: 1 / -1;
   }
 
-  /* Image - left column, spans all rows */
   .detail-img {
     grid-column: 1;
-    grid-row: 2 / -1; /* Start after nav, span to bottom */
+    grid-row: 2 / -1;
     width: 100%;
     height: auto;
     max-height: none;
@@ -958,21 +994,18 @@ body {
     border-radius: 8px;
   }
 
-  /* Padded container - right column */
   .paddedContainer {
     grid-column: 2;
     grid-row: 2;
-    padding: 0; /* Remove padding, using grid gap */
+    padding: 0;
   }
 
-  /* Price section - right column, below content */
   .price-section {
     grid-column: 2;
     grid-row: 3;
     margin: 0;
   }
 
-  /* Bigger text for desktop */
   #class-level {
     font-size: 14px;
   }
@@ -995,7 +1028,6 @@ body {
     font-size: 14px;
   }
 
-  /* Date pills - allow wrapping */
   #date-pills {
     flex-wrap: wrap;
     gap: 12px;
@@ -1007,7 +1039,6 @@ body {
     font-size: 14px;
   }
 
-  /* What's Included section */
   .included-section {
     margin: 20px 0;
   }
@@ -1022,10 +1053,8 @@ body {
     margin-bottom: 8px;
   }
 
-  /* Price section */
   .price-label {
     font-size: 20px;
-    padding: 12px;
   }
 
   #class-price {
@@ -1039,39 +1068,17 @@ body {
     font-size: 18px;
   }
 
-  /* Main cart container - grid layout */
-  .cart-container {
-    display: grid;
-    grid-template-columns: 1fr 400px; /* Left content, right sidebar 400px */
-    gap: 60px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 40px 60px;
-  }
-
-  /* Left column - cart items + dog details */
-  .cart-left {
-    grid-column: 1;
-  }
-
-  /* Right column - order summary + checkout button */
-  .cart-right {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
+  /* CART PAGE */
   .cart-page-wrapper {
     display: grid;
-    grid-template-columns: 1fr 450px; /* Left content, right sidebar */
+    grid-template-columns: 1fr 450px;
     gap: 80px;
     max-width: 1300px;
     margin: 0 auto;
     padding: 40px 60px;
-    align-items: start; /* Align to top */
+    align-items: start;
   }
 
-  /* Class summary header - only in left column */
   .class-summary-header {
     font-size: 28px;
     padding-bottom: 15px;
@@ -1079,17 +1086,16 @@ body {
     border-bottom: 2px solid var(--black);
   }
 
-  /* Cart items - bigger cards with borders */
   .cart-item {
     margin: 0 0 30px 0;
     padding: 25px 0;
     display: flex;
     gap: 30px;
-    border-bottom: 2px solid #e0e0e0; /* Separator between cards */
+    border-bottom: 2px solid #e0e0e0;
   }
 
   .cart-item:last-of-type {
-    border-bottom: none; /* Remove border from last item */
+    border-bottom: none;
   }
 
   .cart-image {
@@ -1122,16 +1128,13 @@ body {
     display: inline-block;
   }
 
-  /* Separator after cart items, before dog details */
   #cart-items {
     padding-bottom: 40px;
     border-bottom: 3px solid #ccc;
     margin-bottom: 40px;
   }
 
-  /* Dog details card */
   .dog-details-card {
-    order: 1; /* First */
     margin: 0;
     padding: 25px;
     background: var(--gray);
@@ -1159,274 +1162,225 @@ body {
     font-size: 28px;
   }
 
-  /* Order summary - no background box, just text */
-  .order-summary {
-    order: 2; /* Second */
-  }
-
   .order-summary h3 {
     font-size: 24px;
     margin-bottom: 25px;
-    text-align: left; /* Left align, not center */
+    text-align: left;
     font-weight: 700;
   }
 
   .order-summary p {
     font-size: 17px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #ddd; /* Border between items */
+    border-bottom: 1px solid #ddd;
   }
 
   .order-summary p:last-of-type {
-    border-bottom: none; /* No border on last item before total */
+    border-bottom: none;
   }
 
   .total {
     font-size: 26px;
     margin-top: 25px;
     padding-top: 25px;
-    border-top: 2px solid var(--black); /* Thicker border for total */
+    border-top: 2px solid var(--black);
     border-bottom: none;
   }
 
-  /* Checkout button */
   .checkout-btn {
     width: 100%;
     margin: -20px 0 0 0;
     padding: 20px;
     font-size: 18px;
     font-weight: 700;
-    order: 3;
   }
 
-    /* Existing styles... */
-    
-    /* Checkout page - two column layout */
-    .checkout-page-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 450px;
-        gap: 80px;
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 40px 60px;
-    }
-    
-    /* Checkout header - left column only */
-    .checkout-text {
-        font-size: 28px;
-        padding-bottom: 15px;
-        margin: 0 0 30px 0;
-        border-bottom: 2px solid var(--black);
-    }
-    
-    /* Card form - full width in left column */
-    .card-form {
-        background: var(--gray);
-        padding: 30px;
-        margin: 0 0 40px 0;
-        border-radius: 8px;
-    }
-    
-    .card-form label {
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: var(--dark-gray);
-    }
-    
-    .card-input {
-        padding: 14px;
-        font-size: 15px;
-        margin-top: 8px;
-    }
-    
-    /* Expiry and CVV side by side */
-    .card-form-flex {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-    
-    /* Dog details confirmation - left column */
-    .dog-details-card {
-        background: var(--gray);
-        padding: 30px;
-        margin: 0;
-        border-radius: 8px;
-    }
-    
-    .dog-details-card h3 {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
-    
-    .dog-form label {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-    
-    .dog-input {
-        padding: 12px;
-        font-size: 15px;
-    }
-    
-    /* Right column - Cart Totals */
-    .checkout-right {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+  /* CHECKOUT PAGE */
+  .checkout-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+  }
 
-        .checkout-right .order-summary h3 {
-        font-size: 24px;
-        margin-bottom: 25px;
-        font-weight: 700;
-    }
+  .checkout-text {
+    font-size: 28px;
+    padding-bottom: 15px;
+    margin: 0 0 30px 0;
+    border-bottom: 2px solid var(--black);
+  }
 
-        .checkout-right .order-summary p {
-        font-size: 17px;
-        margin: 15px 0;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #ddd;
-    }
+  .card-form {
+    background: var(--gray);
+    padding: 30px;
+    margin: 0 0 40px 0;
+    border-radius: 8px;
+  }
 
-        .checkout-right .total {
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 2px solid var(--black);
-        border-bottom: none;
-    }
-    
-    .cart-totals {
-        background: transparent;
-        padding: 0;
-    }
-    
-    .cart-totals h3 {
-        font-size: 24px;
-        margin-bottom: 25px;
-        font-weight: 700;
-    }
-    
-    .cart-totals p {
-        font-size: 17px;
-        margin: 15px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .subtotal,
-    .discount {
-        padding-bottom: 15px;
-        border-bottom: 1px solid #ddd;
-    }
-    
-    .estimated-total {
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 2px solid var(--black);
-    }
-    .confirm-navbar {
-      display: none;
-    }
+  .card-form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+  }
 
-    .confirmation-page,
-    main.paddedContainer {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 80px 60px;
-    }
-    
-    /* Hide paw decoration */
-    .paw-decoration {
-        display: none;
-    }
-    
-    /* Confirmation card - more padding, centered */
-    .confirmation-card {
-        background: var(--gray);
-        padding: 60px 80px;
-        margin: 0 auto 60px auto;
-        max-width: 900px;
-        border-radius: 12px;
-    }
-    
-    /* Header - bigger */
-    .confirmation-header {
-        gap: 25px;
-        margin-bottom: 40px;
-    }
-    
-    .confirmation-header h1 {
-        font-size: 42px;
-        font-weight: 800;
-    }
-    
+  .card-input {
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 8px;
+  }
 
+  .card-form-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
+  .checkout-right .order-summary h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
 
+  .checkout-right .order-summary p {
+    font-size: 17px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
 
-    .tick-icon {
-        width: 60px;
-        height: 60px;
-    }
-    
-    /* Booked classes - centered, no borders, bigger text */
-    .booked-classes {
-        text-align: center;
-        margin: 40px 0;
-        padding: 0;
-        border: none;
-    }
-    
-    .booked-classes p {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 15px 0;
-        color: var(--black);
-    }
-    
-    /* Message - bigger */
-    .confirmation-message {
-        font-size: 22px;
-        font-weight: 600;
-        margin: 40px 0;
-        text-align: center;
-    }
-    
-    /* Dogs divider - more spacing */
-    .dogs-divider {
-        gap: 30px;
-        margin: 50px 0;
-        padding: 30px 0;
-    }
-    
-    .dogs-divider img {
-        width: 70px;
-    }
-    
-    /* Contact info - bigger text */
-    .contact-info {
-        margin-top: 30px;
-    }
-    
-    .contact-info p {
-        font-size: 17px;
-        margin: 12px 0;
-    }
-    
-    .contact-info strong {
-        font-weight: 700;
-    }
-    
+  .checkout-right .total {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--black);
+    border-bottom: none;
+  }
 
+  /* CONFIRMATION PAGE */
+  .confirm-navbar {
+    display: none;
+  }
 
+  main.paddedContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 60px;
+  }
 
+  .confirmation-card {
+    background: var(--gray);
+    padding: 60px 80px;
+    margin: 0 auto 60px auto;
+    max-width: 900px;
+    border-radius: 12px;
+  }
 
+  .confirmation-header {
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .confirmation-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+  }
+
+  .tick-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .booked-classes {
+    text-align: center;
+    margin: 40px 0;
+    padding: 0;
+    border: none;
+  }
+
+  .booked-classes p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0;
+    color: var(--black);
+  }
+
+  .confirmation-message {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .dogs-divider {
+    gap: 30px;
+    margin: 50px 0;
+    padding: 30px 0;
+  }
+
+  .dogs-divider img {
+    width: 70px;
+  }
+
+  .contact-info {
+    margin-top: 30px;
+  }
+
+  .contact-info p {
+    font-size: 17px;
+    margin: 12px 0;
+  }
+
+  /* FOOTER - DESKTOP */
+  .site-footer {
+    padding: 50px 60px 20px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    flex: 1.2;
+    text-align: left;
+  }
+
+  .footer-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-tagline {
+    font-size: 16px;
+  }
+
+  .footer-section {
+    flex: 1;
+  }
+
+  .footer-section h4 {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    max-width: 1320px;
+    margin: 24px auto 0;
+    font-size: 14px;
+  }
 }

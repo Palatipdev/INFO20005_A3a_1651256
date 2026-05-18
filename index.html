@@ -11,45 +11,19 @@
 <body>
 
 
-    <!-- Information Bar -->
+    <!-- Information Bar (Desktop Header) -->
     <div class="info-bar">
-        <img src="images/logo.png" alt="Planet K9 Logo" class="logo">
-        
-        <div class="info-items-group">
-            <div class="info-item">
-                <img src="images/location_desktop.png" alt="Location">
-                <div>
-                    <p class="info-label">Location:</p>
-                    <p class="info-value">Spotswood</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <img src="images/phone_desktop.png" alt="Phone">
-                <div>
-                    <p class="info-label">Phone:</p>
-                    <p class="info-value">0431 418 688</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <img src="images/opening_hours_desktop.png" alt="Hours">
-                <div>
-                    <p class="info-label">Opening Hours:</p>
-                    <p class="info-value">Open 7 Days: 8:00am - 5:00pm</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Bar (Desktop) -->
-    <nav class="navbar desktop-nav">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Planet K9 Logo" class="logo">
+        </a>
         <div class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="class.html" class="nav-link">Classes</a>
-            <a href="cart.html" class="nav-link">Cart</a>
+            <a href="cart.html" class="nav-link cart-link">Cart<span id="cart-badge" class="cart-badge"></span></a>
             <a href="#" class="nav-link disabled">Meet Our Team</a>
             <a href="#" class="nav-link disabled">Contact</a>
         </div>
-    </nav>
+    </div>
 
     <!-- NAV -->
     <header>
@@ -100,6 +74,34 @@
             </div>
         </section>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Planet K9 Logo" class="footer-logo">
+                <p class="footer-tagline">Life with Dogs is Joyful!</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Location: Spotswood</p>
+                <p>Phone: <a href="tel:0405772225">0405 772 225</a></p>
+                <p>Email: <a href="mailto:planetk9trainers@gmail.com">planetk9trainers@gmail.com</a></p>
+                <p>Open 7 Days: 8:00am &ndash; 5:00pm</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="class.html">Classes</a>
+                <a href="cart.html">Cart</a>
+                <a href="#" class="disabled">Meet Our Team</a>
+                <a href="#" class="disabled">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 by Planet K9 Pty Ltd.</p>
+        </div>
+    </footer>
 
     <script src="js/classes.js"></script>
     <script src="js/shared.js"></script>
