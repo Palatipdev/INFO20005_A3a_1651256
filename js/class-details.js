@@ -27,7 +27,10 @@ function renderClassDetail() {
   const includedList = document.getElementById("included-list");
   selectedClass.included.forEach((item) => {
     includedList.innerHTML += `
-        <p>✅ ${item}</p>
+        <div class="included-item">
+          <div class="tick-badge">✓</div>
+          <span>${item}</span>
+        </div>
         `;
   });
 }

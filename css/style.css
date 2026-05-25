@@ -337,7 +337,7 @@ body {
 }
 
 .time-note {
-  color: red;
+  color: var(--accent);
   font-size: 12px;
   font-weight: 700;
   font-style: italic;
@@ -393,6 +393,28 @@ body {
   font-size: 16px;
   margin-bottom: 12px;
   color: var(--primary);
+}
+
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.tick-badge {
+  background: var(--primary);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 #included-list p {
