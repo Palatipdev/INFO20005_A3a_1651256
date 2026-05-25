@@ -791,6 +791,15 @@ body {
 
   .nav-link.disabled {
     pointer-events: none;
+    cursor: default;
+  }
+
+  .coming-soon {
+    font-size: 0.65em;
+    font-weight: 400;
+    color: var(--gray);
+    position: relative;
+    top: -0.15em;
   }
 
   /* Cart link - show in info-bar nav, hide mobile icon */

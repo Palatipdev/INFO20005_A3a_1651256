@@ -1,12 +1,14 @@
 function updateCartBadge() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const badge = document.getElementById("cart-badge");
-  if (cart.length > 0) {
-    badge.textContent = cart.length;
-    badge.style.display = "block";
-  } else {
-    badge.style.display = "none";
-  }
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const badges = document.querySelectorAll(".cart-badge");
+  badges.forEach((badge) => {
+    if (cart.length > 0) {
+      badge.textContent = cart.length;
+      badge.style.display = "block";
+    } else {
+      badge.style.display = "none";
+    }
+  });
 }
 
 function displayOrderSummary() {
