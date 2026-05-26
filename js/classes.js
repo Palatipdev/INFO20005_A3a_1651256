@@ -129,12 +129,10 @@ const classes = [
 
 // Function to print each card
 function renderClasses(type, containerID) {
-  // container is dog or puppy area
   const container = document.getElementById(containerID);
-  // filtering all classes to get classes that are the type of parameter type
+  if (!container) return;
   const filteredCard = classes.filter((c) => c.type === type);
 
-  // add following to the container
   filteredCard.forEach((c) => {
     container.innerHTML += `
         <div class="class-card">
