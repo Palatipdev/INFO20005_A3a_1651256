@@ -57,7 +57,7 @@ function addToCart() {
     type: selectedClass.type,
     name: selectedClass.name,
     location: selectedClass.location,
-    classLevel: selectedClass.location,
+    classLevel: selectedClass.classLevel,
     price: selectedClass.price,
     date: date,
     image: selectedClass.image,
